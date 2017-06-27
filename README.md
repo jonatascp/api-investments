@@ -14,3 +14,19 @@ $ cd api-investments
 $ npm install api-investments
 $ npm start
 ```
+
+## Example
+
+http://localhost:3000
+
+## Example JSON Poupança
+
+```js
+{  
+   "date-update":"2017-06-23T00:00:00-03:00",
+   "title":"INDICADOR_POUPANCA",
+   "rate":{  
+      "value":"0,5519"
+   }
+}
+```
