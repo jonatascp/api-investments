@@ -8,9 +8,9 @@
 
 ## Get started
 
-`git clone https://github.com/jonatascp/api-investments.git
-cd api-investments
-npm install api-investments
-npm start`
-
-
+```sh
+$ git clone https://github.com/jonatascp/api-investments.git
+$ cd api-investments
+$ npm install api-investments
+$ npm start
+```
