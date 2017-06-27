@@ -1,13 +1,13 @@
 var http = require('http');
 
-var contentHtml = '';
-
 var options = {
     host: 'conteudo.bcb.gov.br',
     path: '/api/feed/pt-br/PAINEL_INDICADORES/poupanca'
 }
 
 var poupancaHtml = function (callback) {
+	
+	var contentHtml = '';
 	
 	var request = http.request(options, function (res) {
 	    res.on('data', function (data) {
