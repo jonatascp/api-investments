@@ -71,72 +71,79 @@ http://localhost:3000
 
 ```js
 {  
-   "data":"27/06/2017 15:38",
-   "titulosInvestir":[  
+   "date":"28/06/2017 15:45",
+   "investmentSecurities":[  
       {  
-         "titulo":"Tesouro IPCA+ 2024 (NTNB Princ)",
-         "vencimento":"15/08/2024",
-         "taxaRendimento":"5,58",
-         "valorMinimo":"R$40,76",
-         "precoUnitario":"R$2.038,24"
+         "title":"Tesouro IPCA+ 2024 (NTNB Princ)",
+         "dueDate":"15/08/2024",
+         "rateReturn":"5,57",
+         "minimumValue":"R$40,79",
+         "unitPrice":"R$2.039,93"
       },
       {  
-         "titulo":"Tesouro IPCA+ com Juros Semestrais 2050 (NTNB)",
-         "vencimento":"15/08/2050",
-         "taxaRendimento":"5,64",
-         "valorMinimo":"R$32,29",
-         "precoUnitario":"R$3.229,17"
+         "title":"Tesouro IPCA+ 2035 (NTNB Princ)",
+         "dueDate":"15/05/2035",
+         "rateReturn":"5,62",
+         "minimumValue":"R$33,95",
+         "unitPrice":"R$1.131,95"
       },
       {  
-         "titulo":"Tesouro Prefixado 2020 (LTN)",
-         "vencimento":"01/01/2020",
-         "taxaRendimento":"9,67",
-         "valorMinimo":"R$31,74",
-         "precoUnitario":"R$793,63"
+         "title":"Tesouro IPCA+ 2045 (NTNB Princ)",
+         "dueDate":"15/05/2045",
+         "rateReturn":"5,62",
+         "minimumValue":"R$32,80",
+         "unitPrice":"R$656,18"
+      },
+      {  
+         "title":"Tesouro Selic 2023 (LFT)",
+         "dueDate":"01/03/2023",
+         "rateReturn":"0,02",
+         "minimumValue":"R$89,07",
+         "unitPrice":"R$8.907,10"
       }
    ],
-   "titulosResgatar":[  
+   "securitiesRedeem":[  
       {  
-         "titulo":"Tesouro IPCA+ 2019 (NTNB Princ)",
-         "vencimento":"15/05/2019",
-         "taxaRendimento":"5,00",
-         "precoUnitario":"R$2.737,31"
+         "title":"Tesouro IPCA+ 2019 (NTNB Princ)",
+         "dueDate":"15/05/2019",
+         "rateReturn":"5,00",
+         "unitPrice":"R$2.737,68"
       },
       {  
-         "titulo":"Tesouro IPCA+ com Juros Semestrais 2020 (NTNB)",
-         "vencimento":"15/08/2020",
-         "taxaRendimento":"5,39",
-         "precoUnitario":"R$3.114,54"
+         "title":"Tesouro IPCA+ com Juros Semestrais 2045 (NTNB)",
+         "dueDate":"15/05/2045",
+         "rateReturn":"5,79",
+         "unitPrice":"R$3.112,31"
       },
       {  
-         "titulo":"Tesouro IPCA+ com Juros Semestrais 2050 (NTNB)",
-         "vencimento":"15/08/2050",
-         "taxaRendimento":"5,76",
-         "precoUnitario":"R$3.175,01"
+         "title":"Tesouro IPCA+ com Juros Semestrais 2050 (NTNB)",
+         "dueDate":"15/08/2050",
+         "rateReturn":"5,74",
+         "unitPrice":"R$3.184,46"
       },
       {  
-         "titulo":"Tesouro Prefixado 2021 (LTN)",
-         "vencimento":"01/01/2021",
-         "taxaRendimento":"10,39",
-         "precoUnitario":"R$707,53"
+         "title":"Tesouro Prefixado com Juros Semestrais 2025 (NTNF)",
+         "dueDate":"01/01/2025",
+         "rateReturn":"10,65",
+         "unitPrice":"R$1.018,33"
       },
       {  
-         "titulo":"Tesouro Prefixado 2023 (LTN)",
-         "vencimento":"01/01/2023",
-         "taxaRendimento":"10,90",
-         "precoUnitario":"R$566,54"
+         "title":"Tesouro Prefixado com Juros Semestrais 2027 (NTNF)",
+         "dueDate":"01/01/2027",
+         "rateReturn":"10,70",
+         "unitPrice":"R$1.010,67"
       },
       {  
-         "titulo":"Tesouro Prefixado com Juros Semestrais 2027 (NTNF)",
-         "vencimento":"01/01/2027",
-         "taxaRendimento":"10,87",
-         "precoUnitario":"R$1.000,99"
+         "title":"Tesouro Selic 2021 (LFT)",
+         "dueDate":"01/03/2021",
+         "rateReturn":"0,06",
+         "unitPrice":"R$8.897,67"
       },
       {  
-         "titulo":"Tesouro Selic 2021 (LFT)",
-         "vencimento":"01/03/2021",
-         "taxaRendimento":"0,06",
-         "precoUnitario":"R$8.894,24"
+         "title":"Tesouro IGPM+ com Juros Semestrais 2031 (NTNC)",
+         "dueDate":"01/01/2031",
+         "rateReturn":"5,70",
+         "unitPrice":"R$5.745,24"
       }
    ]
 }
