@@ -15,11 +15,11 @@ $ npm install api-investments
 $ npm start
 ```
 
-## Example
+## Example open Home page
 
 http://localhost:3000
 
-## Example JSON Poupança
+## Example return JSON Poupança (http://localhost:3000/poupanca)
 
 ```js
 {  
@@ -27,6 +27,23 @@ http://localhost:3000
    "title":"INDICADOR_POUPANCA",
    "rate":{  
       "value":"0,5519"
+   }
+}
+```
+
+## Example return JSON Selic (http://localhost:3000/selic)
+
+```js
+{  
+   "date-update":"2017-06-27T21:45:02-03:00",
+   "title":"Taxa Selic",
+   "rate":{  
+      "value":"10,25",
+      "date":"31/05/2017"
+   },
+   "daily":{  
+      "value":"10,15",
+      "date":"27/06/2017"
    }
 }
 ```
