@@ -1,8 +1,10 @@
 <h1 align="center">API Investments</h1>
 
-<h4 align="center">Serviço para obter valores atuais das seguintes taxas: poupança, Selic e IPCA.</h4>
+<h4 align="center">Serviços para obter valores atuais das taxas: poupança, Selic e IPCA.
+<br />Serviços para obter títulos disponíveis do Tesouro Direto para investimentos no Brasil.</h4>
 
-<h5 align="center"><i>Service to obtain current values ​​of the following rates: Savings, Selic and IPCA.</i></h5>
+<h5 align="center"><i>Services to obtain current rates values: savings, Selic and IPCA.
+<br />Services to obtain available Treasury Direct securities for investments in Brazil.</i></h5>
 
 <br />
 
