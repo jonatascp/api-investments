@@ -2,7 +2,7 @@ var tesouroDiretoHtml = require('./tesouro-direto-html');
 var cheerio = require('cheerio');
 
 var $;
-var titulo;
+var securities;
 
 var tesouroDiretoJson = function (callback) {
 
@@ -10,13 +10,13 @@ var tesouroDiretoJson = function (callback) {
 
 		$  = cheerio.load(response);
 
-		var dataAtualizacao;
+		var updateDate;
 		$('.portlet-body>b').each(function(i, elem) {
-			dataAtualizacao = $(this).html();
+			updateDate = $(this).html();
 		});
 
-		var arrayTitulosInvestir = [];
-		var arrayTitulosResgatar = [];
+		var arrayInvestmentSecurities = [];
+		var arraySecuritiesRedeem = [];
 		var initJson = true;
 		var numberAttribute = 0;
 
@@ -24,36 +24,36 @@ var tesouroDiretoJson = function (callback) {
 			if (initJson) { 
 				initJson = false;
 				numberAttribute = 0;
-				titulo = {
-					"titulo": "",
-					"vencimento": "",
-					"taxaRendimento": "",
-					"valorMinimo": "",
-					"precoUnitario": ""
+				securities = {
+					"title": "",
+					"dueDate": "",
+					"rateReturn": "",
+					"minimumValue": "",
+					"unitPrice": ""
 				};
 			}
 			
 			if (numberAttribute == 0) {
-				titulo.titulo = $(this).html();
+				securities.title = $(this).html();
 			}
 			if (numberAttribute == 1) {
-				titulo.vencimento = $(this).html();
+				securities.dueDate = $(this).html();
 			}
 			if (numberAttribute == 2) {
-				titulo.taxaRendimento = $(this).html();
+				securities.rateReturn = $(this).html();
 			}
 			if (numberAttribute == 3) {
-				titulo.valorMinimo = $(this).html();
+				securities.minimumValue = $(this).html();
 			}
 			if (numberAttribute == 4) {
-				titulo.precoUnitario = $(this).html();
+				securities.unitPrice = $(this).html();
 			}
 
 			numberAttribute++;
 
 			if ((i+1) % 5 == 0) { 
 				initJson = true;
-				arrayTitulosInvestir.push(titulo);
+				arrayInvestmentSecurities.push(securities);
 			}
 		});
 
@@ -62,39 +62,39 @@ var tesouroDiretoJson = function (callback) {
 			if (initJson) { 
 				initJson = false;
 				numberAttribute = 0;
-				titulo = {
-					"titulo": "",
-					"vencimento": "",
-					"taxaRendimento": "",
-					"precoUnitario": ""
+				securities = {
+					"title": "",
+					"dueDate": "",
+					"rateReturn": "",
+					"unitPrice": ""
 				};
 			}
 			
 			if (numberAttribute == 0) {
-				titulo.titulo = $(this).html();
+				securities.title = $(this).html();
 			}
 			if (numberAttribute == 1) {
-				titulo.vencimento = $(this).html();
+				securities.dueDate = $(this).html();
 			}
 			if (numberAttribute == 2) {
-				titulo.taxaRendimento = $(this).html();
+				securities.rateReturn = $(this).html();
 			}
 			if (numberAttribute == 3) {
-				titulo.precoUnitario = $(this).html();
+				securities.unitPrice = $(this).html();
 			}
 			
 			numberAttribute++;
 
 			if ((i+1) % 4 == 0) { 
 				initJson = true;
-				arrayTitulosResgatar.push(titulo);
+				arraySecuritiesRedeem.push(securities);
 			}
 		});
 		
 		var json = {
-			"data": dataAtualizacao,	
-			"titulosInvestir": arrayTitulosInvestir,
-			"titulosResgatar": arrayTitulosResgatar
+			"date": updateDate,	
+			"investmentSecurities": arrayInvestmentSecurities,
+			"securitiesRedeem": arraySecuritiesRedeem
 		};
 
 		return callback(json);
