@@ -47,3 +47,20 @@ http://localhost:3000
    }
 }
 ```
+
+## Example return JSON Ipca (http://localhost:3000/ipca)
+
+```js
+{  
+   "date-update":"2017-06-27T21:55:01-03:00",
+   "title":"Taxa de Inflação",
+   "rate":{  
+      "value":"4,5",
+      "obs":"(+/- 1,5 p.p.)"
+   },
+   "daily":{  
+      "value":"3,6",
+      "obs":"(período de 12 meses - IPCA)"
+   }
+}
+```
