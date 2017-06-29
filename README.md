@@ -5,7 +5,9 @@
 
 <h5 align="center"><i>Services to obtain current rates values: savings, Selic and IPCA.
 <br />Services to obtain available Treasury Direct securities for investments in Brazil.</i></h5>
-
+<a href="https://travis-ci.org/jonatascp/api-investments">
+  <img src="https://travis-ci.org/jonatascp/api-investments.svg?branch=master" alt="Travis CI" />
+</a>
 <br />
 
 ## Get started
