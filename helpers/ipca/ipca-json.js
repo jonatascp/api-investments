@@ -1,6 +1,7 @@
 const ipcaHtml = require('./ipca-html');
 const cheerio = require('cheerio');
 const datetime = require('node-datetime');
+const parseFloatAPI = require('../parse-float-api');
 
 var $;
 var divs;
@@ -17,11 +18,11 @@ const ipcaJson = function(callback) {
             "title": $('entry>title').text(),
             "date-update-formatted": date.format('d/m/Y'),
             "rate": {
-                "value": divs('#rate>#value')[0].children[0].data,
+                "value": parseFloatAPI(divs('#rate>#value')[0].children[0].data),
                 "obs": divs('#rate>#obs')[0].children[0].data
             },
             "daily": {
-                "value": divs('#rate>#value')[1].children[0].data,
+                "value": parseFloatAPI(divs('#rate>#value')[1].children[0].data),
                 "obs": divs('#rate>#obs')[1].children[0].data
             },
             "date-update": date.getTime()

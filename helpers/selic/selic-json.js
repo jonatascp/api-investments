@@ -1,6 +1,7 @@
 const selicHtml = require('./selic-html');
 const cheerio = require('cheerio');
 const datetime = require('node-datetime');
+const parseFloatAPI = require('../parse-float-api');
 
 var $;
 var divs;
@@ -17,11 +18,11 @@ const selicJson = function(callback) {
             "title": $('entry>title').text(),
             "date-update-formatted": date.format('d/m/Y'),
             "rate": {
-                "value": divs('#ratevalue').text(),
+                "value": parseFloatAPI(divs('#ratevalue').text()),
                 "date-formatted": divs('#rate').children().last().text()
             },
             "daily": {
-                "value": divs('#dailyratevalue').text(),
+                "value": parseFloatAPI(divs('#dailyratevalue').text()),
                 "date-formatted": divs('#dailyratedate').text()
             },
             "date-update": date.getTime()

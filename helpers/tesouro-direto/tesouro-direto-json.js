@@ -1,6 +1,7 @@
 const tesouroDiretoHtml = require('./tesouro-direto-html');
 const cheerio = require('cheerio');
 const datetime = require('node-datetime');
+const parseFloatAPI = require('../parse-float-api');
 
 var $;
 var securities;
@@ -41,13 +42,13 @@ const tesouroDiretoJson = function (callback) {
 				securities.dueDate = $(this).html();
 			}
 			if (numberAttribute == 2) {
-				securities.rateReturn = $(this).html();
+				securities.rateReturn = parseFloatAPI($(this).html());
 			}
 			if (numberAttribute == 3) {
-				securities.minimumValue = $(this).html();
+				securities.minimumValue = parseFloatAPI($(this).html());
 			}
 			if (numberAttribute == 4) {
-				securities.unitPrice = $(this).html();
+				securities.unitPrice = parseFloatAPI($(this).html());
 			}
 
 			numberAttribute++;
@@ -78,10 +79,10 @@ const tesouroDiretoJson = function (callback) {
 				securities.dueDate = $(this).html();
 			}
 			if (numberAttribute == 2) {
-				securities.rateReturn = $(this).html();
+				securities.rateReturn = parseFloatAPI($(this).html());
 			}
 			if (numberAttribute == 3) {
-				securities.unitPrice = $(this).html();
+				securities.unitPrice = parseFloatAPI($(this).html());
 			}
 			
 			numberAttribute++;
