@@ -2,17 +2,39 @@
   "name": "api-investments",
   "description": "API Investments",
   "version": "0.0.1",
-  "private": false,
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "jonatascp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonatascp/api-investments.git"
+  },
+  "engines": {
+    "node": ">=4.3.2"
+  },
   "scripts": {
+    "deploy": "gcloud app deploy",
     "start": "node app.js"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.1",
-    "cookie-parser": "^1.4.3",
-    "ejs": "~2.5.5",
-    "express": "^4.15.3",
+    "cheerio": "1.0.0-rc.1",
+    "cookie-parser": "1.4.3",
+    "ejs": "2.5.5",
+    "express": "4.15.3",
     "express-load": "1.1.16",
-    "express-session": "^1.15.3",
-    "method-override": "^2.3.9"
+    "express-session": "1.15.3",
+    "method-override": "2.3.9"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "1.4.15"
+  },
+  "cloud-repo-tools": {
+    "test": {
+      "app": {
+        "msg": "Hello, world!"
+      }
+    },
+    "requiresKeyFile": true,
+    "requiresProjectId": true
   }
 }

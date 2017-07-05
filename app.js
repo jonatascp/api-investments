@@ -1,10 +1,12 @@
-var express = require('express');
-var load = require('express-load');
-var session = require('express-session');
-var cookieParser = require('cookie-parser');
-var methodOverride = require('method-override');
+'use strict';
 
-var app = express();
+const express = require('express');
+const load = require('express-load');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const methodOverride = require('method-override');
+
+const app = express();
 
 // view engine setup
 app.set('views', __dirname + '/views');
@@ -19,8 +21,8 @@ app.use(express.static(__dirname + '/public'));
 
 load('models').then('controllers').then('routes').into(app);
 
-
-
-app.listen(3000, function () {
-	console.log('...API Investments...');
+// Start the server
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, function () {
+	console.log('...API Investments on %s...', PORT);
 });
