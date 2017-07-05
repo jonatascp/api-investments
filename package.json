@@ -23,7 +23,8 @@
     "express": "4.15.3",
     "express-load": "1.1.16",
     "express-session": "1.15.3",
-    "method-override": "2.3.9"
+    "method-override": "2.3.9",
+    "node-datetime": "1.0.1"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "1.4.15"

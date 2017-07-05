@@ -1,21 +1,24 @@
-var poupancaHtml = require('./poupanca-html');
-var cheerio = require('cheerio');
+const poupancaHtml = require('./poupanca-html');
+const cheerio = require('cheerio');
+const datetime = require('node-datetime');
 
 var $;
 var divs;
 
-var poupancaJson = function (callback) {
+const poupancaJson = function (callback) {
 
 	poupancaHtml(function (response) {
 
 		$  = cheerio.load(response);
 		divs = cheerio.load($('entry>content').text());
+		const date = datetime.create($('entry>updated').text());
 
-		var json = {
-		  "date-update": $('entry>updated').text(),
-		  "title": $('entry>title').text(),
-		  "rate": { "value": divs('#rate>#value').text()
-		  		}		
+		const json = {
+			"title": $('entry>title').text(),
+		 	"rate": { "value": divs('#rate>#value').text()
+		  			},
+		  	"date-update-formatted": date.format('d/m/Y'),
+		  	"date-update": date.getTime()
 		};
 
 		return callback(json);
