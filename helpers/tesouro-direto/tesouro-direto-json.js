@@ -1,22 +1,23 @@
-var tesouroDiretoHtml = require('./tesouro-direto-html');
-var cheerio = require('cheerio');
+const tesouroDiretoHtml = require('./tesouro-direto-html');
+const cheerio = require('cheerio');
+const datetime = require('node-datetime');
 
 var $;
 var securities;
 
-var tesouroDiretoJson = function (callback) {
+const tesouroDiretoJson = function (callback) {
 
 	tesouroDiretoHtml(function (response) {
 
 		$  = cheerio.load(response);
 
-		var updateDate;
+		var dateUpdate;
 		$('.portlet-body>b').each(function(i, elem) {
-			updateDate = $(this).html();
+			dateUpdate = $(this).html();
 		});
 
-		var arrayInvestmentSecurities = [];
-		var arraySecuritiesRedeem = [];
+		const arrayInvestmentSecurities = [];
+		const arraySecuritiesRedeem = [];
 		var initJson = true;
 		var numberAttribute = 0;
 
@@ -92,7 +93,7 @@ var tesouroDiretoJson = function (callback) {
 		});
 		
 		var json = {
-			"date": updateDate,	
+			"date-formatted": dateUpdate,
 			"investmentSecurities": arrayInvestmentSecurities,
 			"securitiesRedeem": arraySecuritiesRedeem
 		};
