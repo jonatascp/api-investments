@@ -15,9 +15,9 @@ const poupancaJson = function (callback) {
 
 		const json = {
 			"title": $('entry>title').text(),
+			"date-update-formatted": date.format('d/m/Y'),
 		 	"rate": { "value": divs('#rate>#value').text()
 		  			},
-		  	"date-update-formatted": date.format('d/m/Y'),
 		  	"date-update": date.getTime()
 		};
 
