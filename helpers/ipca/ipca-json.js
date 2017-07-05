@@ -1,29 +1,34 @@
-var ipcaHtml = require('./ipca-html');
-var cheerio = require('cheerio');
+const ipcaHtml = require('./ipca-html');
+const cheerio = require('cheerio');
+const datetime = require('node-datetime');
 
 var $;
 var divs;
 
-var ipcaJson = function (callback) {
+const ipcaJson = function(callback) {
 
-	ipcaHtml(function (response) {
+    ipcaHtml(function(response) {
 
-		$  = cheerio.load(response);
-		divs = cheerio.load($('entry>content').text());
+        $ = cheerio.load(response);
+        divs = cheerio.load($('entry>content').text());
+        const date = datetime.create($('entry>updated').text());
 
-		var json = {
-		  "date-update": $('entry>updated').text(),
-		  "title": $('entry>title').text(),
-		  "rate": { "value": divs('#rate>#value')[0].children[0].data,
-		  			"obs": divs('#rate>#obs')[0].children[0].data
-		  		},
-		  "daily": { "value": divs('#rate>#value')[1].children[0].data,
-		  			"obs": divs('#rate>#obs')[1].children[0].data
-		  		}		
-		};
+        const json = {
+            "title": $('entry>title').text(),
+            "date-update-formatted": date.format('d/m/Y'),
+            "rate": {
+                "value": divs('#rate>#value')[0].children[0].data,
+                "obs": divs('#rate>#obs')[0].children[0].data
+            },
+            "daily": {
+                "value": divs('#rate>#value')[1].children[0].data,
+                "obs": divs('#rate>#obs')[1].children[0].data
+            },
+            "date-update": date.getTime()
+        };
 
-		return callback(json);
-	});
+        return callback(json);
+    });
 };
 
 module.exports = ipcaJson;
