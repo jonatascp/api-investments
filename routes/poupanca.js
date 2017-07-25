@@ -4,4 +4,5 @@ var router = express.Router();
 module.exports = function(app) {
 	var poupanca = app.controllers.poupanca;
 	app.get('/poupanca', poupanca.index);
+	app.get('/poupanca/save', poupanca.save);
 };
